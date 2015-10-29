@@ -106,10 +106,11 @@ contains(names, 'Colt', function(result){
 
 
 var uniq = function(array,func){
-  for(var i = 0; i < array.length; i++){
-    for(var j = i+1; j < array.length; j++){
+  var len = array.length;
+  for(var i = 0; i < len; i++){
+    for(var j = i+1; j < len; j++){
       if(array[i] === array[j]){
-        delete array[j];
+        delete array[j];    // use splice instead of array so it doens't leave empty index
       }
     }
   }
